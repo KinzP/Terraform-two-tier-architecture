@@ -1,3 +1,4 @@
+# Provider
 terraform {
   required_providers {
     aws = {
@@ -13,6 +14,43 @@ provider "aws" {
 }
 
 # Create a VPC
-resource "aws_vpc" "vpc18" {
+resource "aws_vpc" "vpc_P18" {
   cidr_block = "10.0.0.0/16"
 }
+  tags = {
+    Name        = "Project-18-KP"
+  }
+}
+
+# Create a 2 Public Subnets
+
+resource "aws_subnet" "public_subnet1a_P18" {
+  vpc_id            = aws_vpc.P18KP.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+  tags = {
+    Name = "Project-18-KP"
+  }
+}
+
+resource "aws_subnet" "public_subnet1b_P18" {
+  vpc_id            = aws_vpc.P18KP.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "us-east-1b"
+  tags = {
+    Name = "Project-18-KP"
+  }
+}
+
+
+# Create a 2 Private Subnets
+
+
+
+
+
+
+
+
+
+
