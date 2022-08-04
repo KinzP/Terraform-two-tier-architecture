@@ -11,6 +11,7 @@ resource "aws_instance" "web_server1_P18"   {
         yum install httpd -y
         systemctl start
         systemctl enable
+        echo '<h1>Hello LUIT Red Team!</h1>' > /usr/share/nginx/html/index.html
         EOF
 }
 
@@ -27,6 +28,7 @@ resource "aws_instance" "web_server2_P18" {
         yum install httpd -y
         systemctl start
         systemctl enable 
+        echo '<h1>LUIT Red Team = BEST TEAM!</h1>' > /usr/share/nginx/html/index.html
         EOF
 }
 # Create Application load balancer
