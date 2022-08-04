@@ -5,7 +5,6 @@ resource "aws_vpc" "TF_P18" {
   tags = {
     Name = "VPC_P18"
   }
-}
 
 # Create 2 Public Subnets
 resource "aws_subnet" "public_subnet1a_P18" {
